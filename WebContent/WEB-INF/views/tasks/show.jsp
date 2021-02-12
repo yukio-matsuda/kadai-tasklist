@@ -6,13 +6,24 @@
         <c:choose>
             <c:when test = "${task != null}">
                 <h2>id : "${task.id}" の報告詳細ページ</h2>
-
-                <p>報告内容:<c:out value = "${task.content}" /></p>
-                <p>作成日時:<c:out value = "${task.created_at}" /></p>
-                <p>更新日時:<c:out value = "${task.updated_at}" /></p>
-
-                <p><a href = "${pageContext.request.contextPath}/index" >一覧に戻る</a></p>
-                <p><a href = "${pageContext.request.contextPath}/edit?id=${task.id}" >この報告を編集する</a></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>報告内容</th>
+                            <td><c:out value = "${task.content}" /></td>
+                        </tr>
+                        <tr>
+                            <th>作成日時</th>
+                            <td><c:out value = "${task.created_at}" /></td>
+                        </tr>
+                        <tr>
+                            <th>更新日時</th>
+                            <td><c:out value = "${task.updated_at}" /></td>
+                        </tr>
+                     </tbody>
+                 </table>
+                        <p><a href = "${pageContext.request.contextPath}/index" >一覧に戻る</a></p>
+                        <p><a href = "${pageContext.request.contextPath}/edit?id=${task.id}" >この報告を編集する</a></p>
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>
